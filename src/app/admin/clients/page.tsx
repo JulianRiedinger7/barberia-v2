@@ -71,7 +71,7 @@ export default function ClientsPage() {
                 </button>
             </div>
 
-            <div className="bg-card border border-border rounded-lg overflow-hidden">
+            <div className="bg-card border border-border rounded-lg overflow-hidden overflow-x-auto">
                 <div className="p-4 border-b border-border flex gap-4">
                     <div className="relative flex-1 max-w-sm">
                         <Search size={18} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />

@@ -82,7 +82,7 @@ export default function ServicesPage() {
                 />
             </div>
 
-            <div className="bg-card border border-border rounded-lg overflow-hidden">
+            <div className="bg-card border border-border rounded-lg overflow-hidden overflow-x-auto">
                 <table className="w-full text-left">
                     <thead className="bg-secondary/50 border-b border-border">
                         <tr>
