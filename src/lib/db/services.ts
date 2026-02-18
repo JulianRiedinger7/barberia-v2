@@ -16,13 +16,19 @@ const COLLECTION_NAME = "services";
 export function subscribeToServices(callback: (services: Service[]) => void) {
     const q = query(collection(db, COLLECTION_NAME), orderBy("name"));
 
-    return onSnapshot(q, (snapshot) => {
-        const services = snapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data(),
-        })) as Service[];
-        callback(services);
-    });
+    return onSnapshot(
+        q,
+        (snapshot) => {
+            const services = snapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            })) as Service[];
+            callback(services);
+        },
+        (error) => {
+            console.error("Error fetching services:", error);
+        }
+    );
 }
 
 export async function addService(service: Omit<Service, "id">) {
